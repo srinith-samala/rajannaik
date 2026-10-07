@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { Language } from '../types.ts';
 import { translations } from '../translations.ts';
-import rajannaikImage from '../rajannaik.jpeg';
 
 interface IntroScreenProps {
   onEnter: () => void;
@@ -41,7 +40,7 @@ const IntroScreen: React.FC<IntroScreenProps> = ({ onEnter, language }) => {
           <div className="relative p-1.5 rounded-full bg-gradient-to-b from-[#FF9933] to-[#002147] shadow-2xl">
             <div className="bg-white rounded-full p-1">
                <img 
-                src={rajannaikImage} 
+                src="/leader.jpeg" 
                 alt="Representative" 
                 className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-2 border-gray-50"
               />

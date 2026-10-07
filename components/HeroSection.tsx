@@ -2,7 +2,6 @@
 import React from 'react';
 import { ArrowRight, MapPin, Search } from 'lucide-react';
 import { Language } from '../types.ts';
-import rajannaikImage from '../rajannaik.jpeg';
 
 interface HeroSectionProps {
   language: Language;
@@ -82,7 +81,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language, onReportClick, onTr
             {/* Aspect Ratio Wrapper */}
             <div className="relative w-full aspect-[16/9]">
               <img
-                src={rajannaikImage}
+                src="/leader.jpeg"
                 alt="City Development"
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
               />
