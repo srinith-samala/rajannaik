@@ -81,7 +81,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ language, onReportClick, onTr
             {/* Aspect Ratio Wrapper */}
             <div className="relative w-full aspect-[16/9]">
               <img
-                src="/leader.jpeg"
+                src="/hero-banner.jpg"
                 alt="City Development"
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
               />
