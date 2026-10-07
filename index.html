@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bharatiya Janata Party - Civic Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Mukta:wght@400;700;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .playfair {
+        font-family: 'Playfair Display', serif;
+      }
+      .mukta {
+        font-family: 'Mukta', sans-serif;
+      }
+      .font-display {
+        font-family: 'Playfair Display', serif;
+      }
+
+      .bg-bjp-orange {
+        background-color: #FF9933;
+      }
+
+      .text-gradient-navy {
+        background: linear-gradient(to bottom, #002147, #003366);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .shadow-elevated {
+        box-shadow: 
+          0 20px 50px -12px rgba(0, 33, 71, 0.15),
+          0 0 1px rgba(0, 33, 71, 0.1);
+      }
+
+      .shadow-glow {
+        box-shadow: 0 10px 30px -5px rgba(255, 153, 51, 0.4);
+      }
+
+      @keyframes pulse-soft {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.01); }
+      }
+      .animate-pulse-soft {
+        animation: pulse-soft 4s ease-in-out infinite;
+      }
+
+      .text-navy {
+        color: #002147;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.30.1",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

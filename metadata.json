@@ -1,0 +1,9 @@
+{
+  "name": "Remix: VVMC Civic Connect",
+  "description": "A modern municipal portal for reporting issues, accessing emergency contacts, and staying updated with city news.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
