@@ -78,31 +78,14 @@ const AuthSection: React.FC<AuthSectionProps> = ({ language, onSuccess, isPageMo
     }
 
     setIsLoading(true);
-    try {
-      const response = await fetch('/api/auth/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mobile })
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send OTP');
-      }
-
-      if (data.demoOtp) {
-        setDemoOtp(data.demoOtp);
-      }
-
-      setTimer(RESEND_TIMER);
-      setStep('otp');
-    } catch (err: any) {
-      console.error('OTP Send Error:', err);
-      setError(language === 'en' ? 'OTP failed to send, try again.' : 'ओटीपी पाठवण्यात अयशस्वी, पुन्हा प्रयत्न करा.');
-    } finally {
-      setIsLoading(false);
-    }
+    // Client-side demo OTP (works without a backend, e.g. on static hosting)
+    await new Promise(r => setTimeout(r, 600));
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    setDemoOtp(otp);
+    setTimer(RESEND_TIMER);
+    setStep('otp');
+    setIsLoading(false);
+    setTimeout(() => window.alert(t.simulated + otp), 100);
   };
 
   const handleVerifyOtp = async () => {
@@ -113,26 +96,10 @@ const AuthSection: React.FC<AuthSectionProps> = ({ language, onSuccess, isPageMo
     }
 
     setIsLoading(true);
-    try {
-      const response = await fetch('/api/auth/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ mobile, otp: otpInput })
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Invalid OTP');
-      }
-
-      onSuccess();
-    } catch (err: any) {
-      console.error('OTP Verify Error:', err);
-      setError(t.errOtp);
-    } finally {
-      setIsLoading(false);
-    }
+    // Demo mode: any 6-digit OTP is accepted
+    await new Promise(r => setTimeout(r, 500));
+    setIsLoading(false);
+    onSuccess();
   };
 
   return (
